@@ -1,14 +1,14 @@
 version: '3.9'
 
 services:
-  ml-service-green:
-    image: ml-service:v1.1.0
-    container_name: ml-service-green
+  ml-service-blue:
+    image: ml-service:v1.0.0
+    container_name: ml-service-blue
     ports:
-      - "5002:5000"
+      - "5001:5000"
     environment:
-      - APP_VERSION=v1.1.0
-      - ENVIRONMENT=green
+      - APP_VERSION=v1.0.0
+      - ENVIRONMENT=blue
     restart: always
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
