@@ -9,38 +9,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
     - name: Checkout repository
       uses: actions/checkout@v4
-
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.10'
-
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        
         pip install \
           numpy==1.26.4 \
           pandas==2.2.2 \
           scikit-learn==1.4.2
-
     - name: Run ML pipeline
       run: |
         python ml_pipeline.py
-
     - name: Make pipeline reproducible
       run: |
-  	echo "Для воспроизводимости ML-пайплайна сохраняются:"
-    	echo "1. Исходный код модели и пайплайна (ml_pipeline.py)"
-    	echo "2. Версии библиотек и зависимостей"
-    	echo "3. Версия Python"
-    	echo "4. Гиперпараметры модели"
-    	echo "5. random_state для воспроизводимого обучения"
-    	echo "6. Конфигурация CI/CD pipeline"
-    	echo "7. Train/test split и параметры подготовки данных"
-    	echo "8. Git history и версия кода"
-    	echo "9. Docker/docker-compose конфигурации"
-    	echo "10. Метрики качества модели"
+        echo "Для воспроизводимости ML-пайплайна сохраняются:"
+        echo "1. Исходный код модели и пайплайна (ml_pipeline.py)"
+        echo "2. Версии библиотек и зависимостей"
+        echo "3. Версия Python"
+        echo "4. Гиперпараметры модели"
+        echo "5. random_state для воспроизводимого обучения"
+        echo "6. Конфигурация CI/CD pipeline"
+        echo "7. Train/test split и параметры подготовки данных"
+        echo "8. Git history и версия кода"
+        echo "9. Docker/docker-compose конфигурации"
+        echo "10. Метрики качества модели"
