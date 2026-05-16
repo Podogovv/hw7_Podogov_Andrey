@@ -1,0 +1,33 @@
+version: '3.9'
+
+services:
+
+  ml-service-v1:
+    image: ml-service:v1.0.0
+    container_name: ml-service-v1
+    ports:
+      - "5001:5000"
+    environment:
+      - VERSION=v1.0.0
+    restart: always
+
+  ml-service-v2:
+    image: ml-service:v1.1.0
+    container_name: ml-service-v2
+    ports:
+      - "5002:5000"
+    environment:
+      - VERSION=v1.1.0
+    restart: always
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx-canary
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx-canary.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - ml-service-v1
+      - ml-service-v2
+    restart: always

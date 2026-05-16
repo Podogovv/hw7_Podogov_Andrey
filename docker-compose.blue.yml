@@ -1,5 +1,3 @@
-version: '3.9'
-
 services:
   ml-service-blue:
     image: ml-service:v1.0.0
