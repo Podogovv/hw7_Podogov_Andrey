@@ -77,6 +77,12 @@ curl http://localhost:5002/health
 
 ----
 
+/predict
+
+<img width="1205" height="313" alt="image" src="https://github.com/user-attachments/assets/8b66d8c2-43e8-4097-b336-dd3c777d0321" />
+
+----
+
 4 Спланировать A/B-тестирование для ML-модели
 
 Код в файле AB-test.py
