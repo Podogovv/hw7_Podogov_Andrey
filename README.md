@@ -55,18 +55,23 @@ curl http://localhost:5002/health
 90% трафика - старая версия v1.0.0
 
 10% трафика - новая версия v1.1.0
+<img width="1018" height="66" alt="image" src="https://github.com/user-attachments/assets/7c075c47-2170-4e4d-b0d4-423b63df826e" />
 
 Запуск Canary
 - docker-compose -f docker-compose.canary.yml up -d
+<img width="549" height="131" alt="image" src="https://github.com/user-attachments/assets/7d0e9a78-a50f-4397-85cc-72d773277c26" />
 
 Проверка контейнеров
 - docker ps
 
 Проверка health endpoints старая версия
 - curl http://localhost:5001/health
+<img width="906" height="117" alt="image" src="https://github.com/user-attachments/assets/ff2b3d58-ee12-4549-9f98-b45a8aee947a" />
+
 
 Проверка health endpoints новая версия
 - curl http://localhost:5002/health
+<img width="901" height="122" alt="image" src="https://github.com/user-attachments/assets/805f0d0b-ca11-45cc-95ab-a3fb60c3d89f" />
 
 ----
 
